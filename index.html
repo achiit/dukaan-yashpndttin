@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yash_pndtt (Nitish Pandey) & Redoven Media - Official Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                        },
+                        redoven: {
+                            dark: '#120305',
+                            card: '#1a080b',
+                            accent: '#991b1b',
+                            bright: '#dc2626'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0d0204;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #ffe58f 0%, #eab308 50%, #b45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .red-gold-border {
+            border: 1px solid rgba(234, 179, 8, 0.25);
+            box-shadow: 0 4px 20px -2px rgba(153, 27, 27, 0.4);
+        }
+        .glass-card {
+            background: rgba(26, 8, 11, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0204;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #991b1b;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#0d0204] text-gray-100 min-h-screen flex flex-col selection:bg-red-800 selection:text-gold-400">
+
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 glass-card border-b border-red-900/40 px-4 lg:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Brand / Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-gold-500/80 bg-red-950 flex items-center justify-center shrink-0">
+                <img src="93e1a322-a8c6-4ae9-a142-021cd4547d22.png" 
+                     alt="Redoven Media Logo" 
+                     class="w-full h-full object-cover"
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'font-cinzel font-bold text-gold-400 text-xl\'>RM</span>';" />
+            </div>
+            <div>
+                <h1 class="text-xl font-bold font-cinzel tracking-wider text-white group-hover:text-gold-400 transition">REDOVEN MEDIA</h1>
+                <p class="text-xs text-gold-500 font-medium tracking-widest uppercase">yash_pndtt | Nitish Pandey</p>
+            </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-300">
+            <a href="#releases" class="hover:text-gold-400 transition">Releases</a>
+            <a href="#banner" class="hover:text-gold-400 transition">Featured Banner</a>
+            <a href="#about" class="hover:text-gold-400 transition">About Nitish</a>
+            <a href="#gallery" class="hover:text-gold-400 transition">Gallery</a>
+            <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-red-800 to-red-600 text-white font-bold hover:shadow-lg hover:shadow-red-900/50 transition">Contact Us</a>
+        </nav>
+        
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-gold-400 text-2xl focus:outline-none">
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden pt-4 pb-2 border-t border-red-900/30 mt-3 flex flex-col gap-3 font-semibold text-gray-200">
+        <a href="#releases" onclick="toggleMobileMenu()" class="hover:text-gold-400 py-1">Releases</a>
+        <a href="#banner" onclick="toggleMobileMenu()" class="hover:text-gold-400 py-1">Featured Banner</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="hover:text-gold-400 py-1">About Nitish</a>
+        <a href="#gallery" onclick="toggleMobileMenu()" class="hover:text-gold-400 py-1">Gallery</a>
+        <a href="#contact" onclick="toggleMobileMenu()" class="text-gold-400 py-1">Contact Us</a>
+    </div>
+</header>
+
+<main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+    <!-- Hero / Profile Card -->
+    <section class="relative rounded-3xl overflow-hidden glass-card red-gold-border p-6 md:p-10">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-950/80 via-black/90 to-red-950/80 -z-10"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <!-- Artist Portrait Image -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden border-2 border-gold-500/60 shadow-2xl shadow-red-950">
+                    <img src="SaveClip.App_720050841_18112041764499379_4416650788442863564_n.jpg" 
+                         alt="Nitish Pandey (yash_pndtt)" 
+                         class="w-full h-full object-cover hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='7752ea90-9b10-4e24-86a3-95f0c66f3075.png';" />
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/60 to-transparent p-4 text-center">
+                        <span class="text-xs uppercase tracking-widest font-bold text-gold-400 bg-red-950/80 px-3 py-1 rounded-full border border-gold-500/30">Founder & Producer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Details -->
+            <div class="md:col-span-7 space-y-5 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-900/40 border border-gold-500/30 text-gold-400 text-xs font-semibold">
+                    <i class="fa-solid fa-record-vinyl animate-spin" style="animation-duration: 8s;"></i> Redoven Media Presenting
+                </div>
+                
+                <h1 class="text-3xl sm:text-5xl font-black font-cinzel text-white leading-tight">
+                    Nitish Pandey <br><span class="gold-gradient-text">(@yash_pndtt)</span>
+                </h1>
+                
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+                    Official Music Producer, Lyricist, & Founder at <strong class="text-gold-400 font-semibold">Redoven Media</strong>. Delivering hit songs across Bhojpuri, Devotional, and Pop genres.
+                </p>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-3 pt-2 max-w-md mx-auto md:mx-0">
+                    <div class="bg-red-950/60 p-3 rounded-xl border border-red-900/50 text-center">
+                        <div class="text-xl font-extrabold text-gold-400">10M+</div>
+                        <div class="text-xs text-gray-400">Total Views</div>
+                    </div>
+                    <div class="bg-red-950/60 p-3 rounded-xl border border-red-900/50 text-center">
+                        <div class="text-xl font-extrabold text-gold-400">20+</div>
+                        <div class="text-xs text-gray-400">Tracks Released</div>
+                    </div>
+                    <div class="bg-red-950/60 p-3 rounded-xl border border-red-900/50 text-center">
+                        <div class="text-xl font-extrabold text-gold-400">4.9★</div>
+                        <div class="text-xs text-gray-400">Artist Rating</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
+                    <a href="#releases" class="px-6 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold hover:brightness-110 shadow-lg shadow-gold-500/20 transition flex items-center gap-2">
+                        <i class="fa-solid fa-play"></i> Listen Tracks
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="px-6 py-3 rounded-xl bg-red-950/80 border border-gold-500/40 text-white font-bold hover:bg-red-900 transition flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-pink-500"></i> Follow Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delhi Sehariya Main Banner -->
+    <section id="banner" class="space-y-4">
+        <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold font-cinzel text-white flex items-center gap-2">
+                <i class="fa-solid fa-star text-gold-400"></i> Featured Banner Release
+            </h2>
+            <span class="text-xs text-gold-400 font-mono">final-image (1).jpg</span>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden border-2 border-gold-500/40 shadow-2xl glass-card relative group">
+            <img src="final-image (1).jpg" 
+                 alt="Delhi Sehariya Banner" 
+                 class="w-full h-auto object-cover max-h-[480px] w-full"
+                 onerror="this.onerror=null; this.src='music_video_cover_5120x2880.jpg';" />
+            
+            <div class="p-6 bg-gradient-to-t from-black via-red-950/90 to-transparent flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <span class="px-3 py-1 rounded-full bg-red-800 text-xs text-gold-300 font-bold tracking-widest uppercase">Official Banner</span>
+                    <h3 class="text-2xl font-black text-white mt-1 font-cinzel">Delhi Sehariya - Official Release</h3>
+                    <p class="text-sm text-gray-300">Produced & Distributed by Redoven Media | Nitish Pandey</p>
+                </div>
+                <button onclick="playTrack('Delhi Sehariya', 'Nitish Pandey & Team', 'final-image (1).jpg')" class="px-6 py-3 bg-gold-500 hover:bg-gold-400 text-black font-extrabold rounded-xl transition flex items-center gap-2 shrink-0">
+                    <i class="fa-solid fa-play"></i> Play Track
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Releases Discography Grid -->
+    <section id="releases" class="space-y-6">
+        <div class="flex items-center justify-between">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-black font-cinzel text-white">Discography & Music Posters</h2>
+                <p class="text-sm text-gray-400">Official artwork and media produced by Redoven Media</p>
+            </div>
+            <span class="text-xs text-gold-400 border border-gold-500/30 px-3 py-1 rounded-full bg-red-950">4 Works Uploaded</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Release 1: Mohabbat Ke Jaadu -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-red-900/60 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                <div class="relative aspect-square overflow-hidden bg-red-950">
+                    <img src="ChatGPT Image Sep 13, 2026, 09_04_17 AM.png" 
+                         alt="Mohabbat Ke Jaadu Poster" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x600/3a0007/facc15?text=Mohabbat+Ke+Jaadu';" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <button onclick="playTrack('Mohabbat Ke Jaadu', 'yash_pndtt', 'ChatGPT Image Sep 13, 2026, 09_04_17 AM.png')" class="w-14 h-14 rounded-full bg-gold-500 text-black flex items-center justify-center text-xl shadow-xl transform scale-90 group-hover:scale-100 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-5 flex flex-col justify-between flex-grow">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-gold-400 font-bold uppercase tracking-wider mb-1">
+                            <span>Romance / Pop</span>
+                            <span>2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition">Mohabbat Ke Jaadu</h3>
+                        <p class="text-xs text-gray-400 mt-1">Singer & Music: Redoven Media</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-red-950 flex items-center justify-between text-xs text-gray-400">
+                        <span class="truncate"><i class="fa-solid fa-file-image text-gold-500"></i> Poster Image</span>
+                        <button onclick="playTrack('Mohabbat Ke Jaadu', 'yash_pndtt', 'ChatGPT Image Sep 13, 2026, 09_04_17 AM.png')" class="text-gold-400 font-bold hover:underline">Listen Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Release 2: Holi Mai Colour Khoje Choli -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-red-900/60 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                <div class="relative aspect-square overflow-hidden bg-red-950">
+                    <img src="ChatGPT Image 1 सित॰ 2026, 05_52_46 pm.png" 
+                         alt="Holi Mai Colour Khoje Choli Poster" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x600/50000a/facc15?text=Holi+Special+Poster';" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <button onclick="playTrack('Holi Mai Colour Khoje Choli', 'yash_pndtt & Party', 'ChatGPT Image 1 सित॰ 2026, 05_52_46 pm.png')" class="w-14 h-14 rounded-full bg-gold-500 text-black flex items-center justify-center text-xl shadow-xl transform scale-90 group-hover:scale-100 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-5 flex flex-col justify-between flex-grow">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-gold-400 font-bold uppercase tracking-wider mb-1">
+                            <span>Bhojpuri Festive</span>
+                            <span>2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition">Holi Mai Colour Khoje Choli</h3>
+                        <p class="text-xs text-gray-400 mt-1">Festival Special Track</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-red-950 flex items-center justify-between text-xs text-gray-400">
+                        <span class="truncate"><i class="fa-solid fa-file-image text-gold-500"></i> Festival Art</span>
+                        <button onclick="playTrack('Holi Mai Colour Khoje Choli', 'yash_pndtt & Party', 'ChatGPT Image 1 सित॰ 2026, 05_52_46 pm.png')" class="text-gold-400 font-bold hover:underline">Listen Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Release 3: He Sharde Maa -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-red-900/60 hover:border-gold-500/60 transition duration-300 flex flex-col group">
+                <div class="relative aspect-square overflow-hidden bg-red-950">
+                    <img src="maa_sharde_3000x3000_RGB.jpg" 
+                         alt="He Sharde Maa Poster" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x600/400508/facc15?text=He+Sharde+Maa';" />
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                        <button onclick="playTrack('He Sharde Maa', 'Nitish Pandey', 'maa_sharde_3000x3000_RGB.jpg')" class="w-14 h-14 rounded-full bg-gold-500 text-black flex items-center justify-center text-xl shadow-xl transform scale-90 group-hover:scale-100 transition">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="p-5 flex flex-col justify-between flex-grow">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-gold-400 font-bold uppercase tracking-wider mb-1">
+                            <span>Devotional Bhakti</span>
+                            <span>3000x3000 HQ</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-gold-400 transition">He Sharde Maa</h3>
+                        <p class="text-xs text-gray-400 mt-1">Saraswati Vandana & Bhajan</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-red-950 flex items-center justify-between text-xs text-gray-400">
+                        <span class="truncate"><i class="fa-solid fa-file-image text-gold-500"></i> High-Res Artwork</span>
+                        <button onclick="playTrack('He Sharde Maa', 'Nitish Pandey', 'maa_sharde_3000x3000_RGB.jpg')" class="text-gold-400 font-bold hover:underline">Listen Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="space-y-6">
+        <div>
+            <h2 class="text-2xl sm:text-3xl font-black font-cinzel text-white">Artist & Studio Gallery</h2>
+            <p class="text-sm text-gray-400">Photos of Nitish Pandey (@yash_pndtt) & Redoven Media Stills</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Photo 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-red-900/40 p-3 group">
+                <div class="relative h-72 rounded-xl overflow-hidden bg-black">
+                    <img src="7752ea90-9b10-4e24-86a3-95f0c66f3075.png" 
+                         alt="yash_pndtt Profile Outfit Photo" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='SaveClip.App_720050841_18112041764499379_4416650788442863564_n.jpg';" />
+                </div>
+                <div class="p-3 text-center">
+                    <h4 class="font-bold text-gold-400 text-sm">Artist Outfit Shot</h4>
+                    <p class="text-xs text-gray-400 font-mono">7752ea90-9b10-4e24-86a3-95f0c66f3075.png</p>
+                </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-red-900/40 p-3 group">
+                <div class="relative h-72 rounded-xl overflow-hidden bg-black">
+                    <img src="SaveClip.App_720050841_18112041764499379_4416650788442863564_n.jpg" 
+                         alt="yash_pndtt Suit Portrait" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='7752ea90-9b10-4e24-86a3-95f0c66f3075.png';" />
+                </div>
+                <div class="p-3 text-center">
+                    <h4 class="font-bold text-gold-400 text-sm">Formal Portrait Shot</h4>
+                    <p class="text-xs text-gray-400 font-mono truncate">SaveClip.App_720050841...jpg</p>
+                </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden border border-red-900/40 p-3 group sm:col-span-2 md:col-span-1">
+                <div class="relative h-72 rounded-xl overflow-hidden bg-black">
+                    <img src="music_video_cover_5120x2880.jpg" 
+                         alt="Music Video Stills Cover" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='final-image (1).jpg';" />
+                </div>
+                <div class="p-3 text-center">
+                    <h4 class="font-bold text-gold-400 text-sm">Music Video Cover Art</h4>
+                    <p class="text-xs text-gray-400 font-mono">music_video_cover_5120x2880.jpg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Contact Section -->
+    <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-4">
+        
+        <!-- About Box -->
+        <div class="md:col-span-7 glass-card rounded-3xl p-6 sm:p-8 red-gold-border space-y-4">
+            <h3 class="text-2xl font-bold font-cinzel text-gold-400 flex items-center gap-2">
+                <i class="fa-solid fa-crown"></i> Redoven Media & Nitish Pandey
+            </h3>
+            <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                Welcome to the official digital hub of <strong class="text-white">Nitish Pandey (yash_pndtt)</strong>. As the creative producer at <strong class="text-gold-400">Redoven Media</strong>, we craft high-quality audio tracks, music videos, and devotional bhajans for global audiences.
+            </p>
+            <div class="grid grid-cols-2 gap-4 pt-2">
+                <div class="bg-red-950/80 p-4 rounded-xl border border-red-900/40">
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-bold">Services</div>
+                    <div class="text-sm font-semibold text-white mt-1">Music Production, Audio Mastering, Video Direction</div>
+                </div>
+                <div class="bg-red-950/80 p-4 rounded-xl border border-red-900/40">
+                    <div class="text-xs text-gray-400 uppercase tracking-widest font-bold">Label</div>
+                    <div class="text-sm font-semibold text-gold-400 mt-1">Redoven Media Official</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Box -->
+        <div id="contact" class="md:col-span-5 glass-card rounded-3xl p-6 sm:p-8 red-gold-border flex flex-col justify-between">
+            <div>
+                <h3 class="text-2xl font-bold font-cinzel text-white mb-2">Get In Touch</h3>
+                <p class="text-xs text-gray-400 mb-6">For shows, music bookings & collaborations</p>
+                
+                <form onsubmit="handleContactSubmit(event)" class="space-y-3">
+                    <input type="text" required placeholder="Your Name" class="w-full px-4 py-2.5 rounded-xl bg-red-950/60 border border-red-900/60 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 text-sm" />
+                    <input type="email" required placeholder="Email / Contact No." class="w-full px-4 py-2.5 rounded-xl bg-red-950/60 border border-red-900/60 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 text-sm" />
+                    <textarea rows="3" required placeholder="Booking Details / Inquiry..." class="w-full px-4 py-2.5 rounded-xl bg-red-950/60 border border-red-900/60 text-white placeholder-gray-500 focus:outline-none focus:border-gold-500 text-sm"></textarea>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-red-800 to-red-600 hover:from-red-700 hover:to-red-500 text-white font-extrabold shadow-lg transition text-sm">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <div id="formSuccess" class="hidden mt-3 p-3 bg-green-950/80 border border-green-600 text-green-300 text-xs rounded-xl text-center">
+                Message sent successfully! We will get back to you soon.
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- Sticky Bottom Audio Player Bar -->
+<div id="audioPlayerBar" class="fixed bottom-0 inset-x-0 z-50 glass-card border-t border-gold-500/30 px-4 py-3">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        
+        <!-- Track details -->
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div class="w-12 h-12 rounded-lg overflow-hidden bg-red-950 shrink-0 border border-gold-500/40">
+                <img id="playerImg" src="final-image (1).jpg" alt="Now Playing" class="w-full h-full object-cover" />
+            </div>
+            <div class="min-w-0">
+                <h4 id="playerTitle" class="text-sm font-bold text-white truncate">Delhi Sehariya</h4>
+                <p id="playerArtist" class="text-xs text-gold-400 truncate">Nitish Pandey & Team</p>
+            </div>
+        </div>
+
+        <!-- Audio controls simulation -->
+        <div class="flex items-center gap-4 w-full sm:w-auto justify-center">
+            <button class="text-gray-400 hover:text-white"><i class="fa-solid fa-backward-step"></i></button>
+            <button onclick="toggleAudioPlay()" id="playPauseBtn" class="w-10 h-10 rounded-full bg-gold-500 text-black flex items-center justify-center font-bold text-lg shadow-md hover:scale-105 transition">
+                <i class="fa-solid fa-pause" id="playIcon"></i>
+            </button>
+            <button class="text-gray-400 hover:text-white"><i class="fa-solid fa-forward-step"></i></button>
+            
+            <!-- Progress Bar -->
+            <div class="w-32 sm:w-48 bg-red-950 h-2 rounded-full overflow-hidden border border-red-900/50 relative">
+                <div id="audioProgress" class="bg-gold-500 h-full w-1/3 transition-all duration-300"></div>
+            </div>
+        </div>
+
+        <!-- External link / Socials -->
+        <div class="hidden md:flex items-center gap-3 text-gold-400 text-lg">
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-spotify"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="glass-card border-t border-red-950 mt-12 py-8 px-4 text-center text-xs text-gray-500 mb-20">
+    <div class="max-w-7xl mx-auto space-y-2">
+        <p class="font-bold text-gray-300">© 2026 Redoven Media | yash_pndtt (Nitish Pandey). All Rights Reserved.</p>
+        <p>Embedded standard image tags configured for local resolution.</p>
+    </div>
+</footer>
+
+<script>
+    let isPlaying = true;
+    let progressInterval;
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+
+    function playTrack(title, artist, imgFilename) {
+        document.getElementById('playerTitle').innerText = title;
+        document.getElementById('playerArtist').innerText = artist;
+        document.getElementById('playerImg').src = imgFilename;
+        isPlaying = true;
+        document.getElementById('playIcon').className = 'fa-solid fa-pause';
+        
+        // Reset progress bar animation
+        let progress = 0;
+        clearInterval(progressInterval);
+        progressInterval = setInterval(() => {
+            progress = (progress + 1) % 100;
+            document.getElementById('audioProgress').style.width = progress + '%';
+        }, 300);
+    }
+
+    function toggleAudioPlay() {
+        const icon = document.getElementById('playIcon');
+        if (isPlaying) {
+            isPlaying = false;
+            icon.className = 'fa-solid fa-play ml-0.5';
+            clearInterval(progressInterval);
+        } else {
+            isPlaying = true;
+            icon.className = 'fa-solid fa-pause';
+            progressInterval = setInterval(() => {
+                let current = parseFloat(document.getElementById('audioProgress').style.width) || 30;
+                document.getElementById('audioProgress').style.width = ((current + 1) % 100) + '%';
+            }, 300);
+        }
+    }
+
+    function handleContactSubmit(e) {
+        e.preventDefault();
+        document.getElementById('formSuccess').classList.remove('hidden');
+        e.target.reset();
+        setTimeout(() => {
+            document.getElementById('formSuccess').classList.add('hidden');
+        }, 4000);
+    }
+
+    // Start audio progress bar simulation on load
+    window.onload = function() {
+        let progress = 25;
+        progressInterval = setInterval(() => {
+            progress = (progress + 0.5) % 100;
+            document.getElementById('audioProgress').style.width = progress + '%';
+        }, 300);
+    };
+</script>
+
+</body>
+</html>
